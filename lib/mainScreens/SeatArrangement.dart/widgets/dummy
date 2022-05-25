@@ -1,0 +1,60 @@
+List<String> seat_number=["A1","A2", "A3", "A4","B1","B2", "B3", "B4", "C1","C2", "C3", "C4", "D1","D2", "D3", "D4", "E1","E2", "E3", "E4","F1","F2", "F3", "F4","G1","G2", "G3", "G4", "H1","H2", "H3", "H4", "I1","I2", "I3", "I4", "J1","J2", "J3", "J4"];
+Column(
+                       children: [
+                          SizedBox(
+                            width: 400,  
+                            height: 800,
+                            child: GridView.builder(  
+              itemCount: 40,   
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(  
+                  crossAxisCount: 2,  
+                  crossAxisSpacing: 4.0,  
+                  mainAxisSpacing: 4.0  
+              ),  
+              itemBuilder: (BuildContext context, int index){  
+                return Row(
+                  // mainAxisAlignment: MainAxisAlignment.spaceAround,  
+                  children: [
+                    SizedBox(width: 70,
+                    
+                    child: AspectRatio(
+                      aspectRatio: 1/4,  
+                      child: GridView.builder(  
+                                  itemCount: 2,  
+                                  
+                                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(  
+                        crossAxisCount: 2,  
+                        crossAxisSpacing: 1.0,  
+                        mainAxisSpacing: 1.0   
+                                  ),  
+                                  itemBuilder: (BuildContext context, int index_child1){ 
+                    
+                      return Seat_button_swift(index, seat_number[index++]);
+                      
+                                  }
+                      )
+                      )
+                    )
+                                  
+                    
+                    
+               
+              //   SizedBox(width: 70, 
+                    
+              //       child: GridView.builder(  
+              // itemCount: 2,  
+              // gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(  
+              //         crossAxisCount: 2,  
+              //         crossAxisSpacing: 4.0,  
+              //         mainAxisSpacing: 4.0  
+              // ),  
+              // itemBuilder: (BuildContext context, int index_child2){ 
+
+              //       return Seat_button_swift(index, seat_number[index]);
+              //  }),),
+              //  Styles.KWidth20, 
+                  ],
+                ); 
+              },  
+            ),
+                          )]);
